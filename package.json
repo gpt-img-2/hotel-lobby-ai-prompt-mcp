@@ -1,0 +1,62 @@
+{
+  "name": "hotel-lobby-ai-prompt-mcp",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.11.1",
+  "description": "Read-only MCP tools for original Hotel Lobby-style duet prompts, shot plans, prompt diagnostics, and canonical AI Hotel Lobby resources.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "hotel-lobby-ai-prompt-mcp": "bin/hotel-lobby-ai-prompt-mcp.js"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "openclaw/",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "smoke": "node scripts/smoke-mcp-client.mjs",
+    "validate": "pnpm typecheck && pnpm test && pnpm build && pnpm smoke"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "hotel-lobby-ai",
+    "video-prompt",
+    "duet-video",
+    "openclaw"
+  ],
+  "author": {
+    "name": "AI Hotel Lobby",
+    "url": "https://aihotellobby.art"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpt-img-2/hotel-lobby-ai-prompt-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gpt-img-2/hotel-lobby-ai-prompt-mcp/issues"
+  },
+  "homepage": "https://aihotellobby.art/hotel-lobby-video",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.3.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.3.1",
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
